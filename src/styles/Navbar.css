@@ -1,0 +1,34 @@
+.nav-link{
+    font-size: 20px;
+    font-weight: 400 ;
+    color: #000000;
+    text-decoration: none;
+}
+
+.nav-items{
+    list-style: none;
+}
+
+.nav-main{
+    background-color: white;
+    height: 7rem!important;
+    overflow: hidden;
+}
+
+.nav-search{
+    border-radius: 5px;
+    width: 30%;
+    height: 30px;
+}
+
+.nav-button{
+    background-color: #fff;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.nav-button:hover{
+    background-color: black;
+    color: #fff;
+}
+ 
