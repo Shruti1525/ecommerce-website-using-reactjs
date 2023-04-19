@@ -1,7 +1,7 @@
 .nav-link{
     font-size: 20px;
     font-weight: 400 ;
-    color: #000000;
+    color:black;
     text-decoration: none;
 }
 
@@ -11,24 +11,39 @@
 
 .nav-main{
     background-color: white;
-    height: 7rem!important;
+    height:6rem!important;
     overflow: hidden;
 }
 
 .nav-search{
-    border-radius: 5px;
-    width: 30%;
+    border-radius: 12px;
+    width: 25%;
     height: 30px;
+    border:2px solid black;
 }
 
 .nav-button{
     background-color: #fff;
-    border: 2px solid black;
-    border-radius: 10px;
+    border: 2px solid #0097B2;
+    border-radius: 12px;
+    color: #0097B2;
 }
 
 .nav-button:hover{
-    background-color: black;
+    background-color:#0097B2;
     color: #fff;
 }
+
+.cart-button{
+    border-radius: 10px;
+    background-color: #fff;
+    border: 2px solid #fff;
+    
+}
+
+/* .cart-button:hover{
+    background-color: #0097B2;
+    color: #fff;
+} */
  
+

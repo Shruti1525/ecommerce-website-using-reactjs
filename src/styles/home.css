@@ -29,7 +29,7 @@
     /* border: 2px solid #fff; */
     /* border-radius: 50%; */
     background: transparent;
-    color: #fff;
+    /* color: #fff; */
     width: 2rem;
     height: 2rem;
     cursor: pointer;
@@ -103,7 +103,7 @@
 	top: 0;
 	/* left: 1; */
 	width: 92%;
-	height:97%;
+	height:96.2%;
 	background: rgba(14, 14, 14, 0.6);
 	color: #ffffff;
 	/* font-family: 'Quicksand', sans-serif; */
@@ -187,6 +187,7 @@
     border-radius: 70%;
     height: 200px;
     width: 205px;
+    
 }
 
 .scroll-bar{

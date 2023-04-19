@@ -5,19 +5,19 @@ import { useState, useEffect } from 'react';
 
 const sliderData=[
   {
-      images:"./assets/homeimages/pic1.jpg", 
-
+      images:"./assets/homeimages/homehero_pic1.jpg", 
+ 
   },
   {
-    images:"./assets/homeimages/pic2.jpg", 
-  },
-  
-  {
-    images:"./assets/homeimages/pic3.jpg", 
+    images:"./assets/homeimages/homehero_pic2.jpg", 
   },
   
   {
-    images:"./assets/homeimages/pic4.jpg", 
+    images:"./assets/homeimages/homehero_pic3.jpg", 
+  },
+  
+  {
+    images:"./assets/homeimages/homehero_pic4.jpg", 
 
   },
 ]
@@ -67,7 +67,7 @@ export default function Slider() {
 
     {sliderData.map((slide, index)=>{
          return(
-           <div className={index===currentSlide ? "slide current " : "slide"} key={index}>
+           <div className={index===currentSlide ? "slide current" : "slide"} key={index}>
             {index===currentSlide && (
               <>
               <img src={slide.images} className="img-fluid" alt="slider" />
@@ -77,9 +77,9 @@ export default function Slider() {
            </div>
          )
     })}     
-       
+
    </div> 
- 
+   
     </>
   )
 }
@@ -88,11 +88,3 @@ export default function Slider() {
 
 
 
-{/* 
-      <AiOutlineArrowLeft className="arrow-prev" /> 
-      <AiOutlineArrowRight className="arrow-next" /> */}
-
-   {/* <div className=' mx-5 px-5'>
-       <img src='./assets/homeimages/pic5.jpg' className='img-fluid first-pic' alt='main-pic' /> 
-      </div> */}
-    

@@ -30,8 +30,8 @@ export default function Footer() {
   
         <div className='row  mt-5'>
             <div className='col-4 para-1 '>
-                <div className=''><img src='./assets/logo1.png' className='img-fluid' style={{height:'100px', width:"100px"}} /> </div>
-                <div className='mt-3'>  Who We Are</div>
+                <div className=''><img src='./assets/digital_store.png' className='img-fluid' style={{height:'100px', width:"100px"}} /> </div>
+                <div className=''>  Who We Are</div>
                 <div>Join Our Team</div>
                 <div>Terms & Conditions</div>
                 <div>We Respect Your Privacy</div>

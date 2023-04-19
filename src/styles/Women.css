@@ -16,3 +16,14 @@
 .image-upper-line{
     background-color: rgb(239, 235, 235);
 }
+
+.women-button{
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.women-button:hover{
+    background-color: black;
+    color: #fff;
+}
+
