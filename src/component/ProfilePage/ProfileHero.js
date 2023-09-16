@@ -1,54 +1,49 @@
 import "../../styles/Profile.css";
 import { useState } from "react";
 import { validateEmail } from "./Utils";
+import { Link } from "react-router-dom";
+
 
 const PasswordErrorMessage = () => {
-return (
-  <p className="FieldError">Password should have at least 8 characters</p>
-)
+  return (
+    <p className="FieldError">Password should have at least 8 characters</p>
+  );
 };
 
 function ProfileHero() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState({
-    value: "",
-    isTouched: false,
+  const [user, setUser] = useState({
+    firstname:'',
+    lastname:'',
+    email:'',
+    password:{
+      value:"",
+      isTouched:false
+    }
   });
-  const [role, setRole] = useState("role");
 
   const getIsFormValid = () => {
     // Implement this function
     return (
-      firstName &&
-      validateEmail(email) &&
-      password.value.length >= 8 &&
-      role !== 'role'
+      user.firstname &&
+      user.lastname&&
+      validateEmail(user.email) &&
+      user.password.value.length >= 8
     );
   };
 
-  const clearForm = () => {
-    // Implement this function
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setPassword({
-      value:"",
-      isTouched: false
-    })
-    setRole("role");
-  };
+  let name,value;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Account created!");
-    clearForm();
+   
+    name=e.target.name;
+    value=e.target.value;
+    setUser({...user,[name]:value})
   };
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit}>
+      <form >
         <fieldset>
           <h2 className="overflow-hidden">Sign Up</h2>
           <div className="Field">
@@ -57,17 +52,17 @@ function ProfileHero() {
             </label>
             <input
               type="text"
-              value={firstName}
-              onChange={ e=> setFirstName(e.target.value) }
+              value={user.firstname}
+              onChange={ e=> setUser({...user,firstname:e.target.value})}
               placeholder="First name"
             />
           </div>
           <div className="Field">
-            <label>Last name</label>
+            <label>Last name <sup>*</sup></label>
             <input
               type="text"
-              value={lastName}
-              onChange={e => setLastName(e.target.value) }
+              value={user.lastname}
+              onChange={e => setUser({...user,lastname:e.target.value}) }
               placeholder="Last name"
             />
           </div>
@@ -77,8 +72,8 @@ function ProfileHero() {
             </label>
             <input
               type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value) }
+              value={user.email}
+              onChange={e => setUser({...user,email:e.target.value}) }
               placeholder="Email address"
             />
           </div>
@@ -88,30 +83,26 @@ function ProfileHero() {
             </label>
             <input
               type="password"
-              value={password.value}
-              onChange={(e) => {
-                setPassword({ ...password, value: e.target.value })
-              }}
-              onBlur={() => {
-                setPassword({ ...password, isTouched: true })
-              }}
+              value={user.password.value}
+              onChange={e =>setUser({...user,password:{...user.password,value:e.target.value}})}
+              onBlur={()=>setUser({...user,password:{...user.password,isTouched:true}})}
               placeholder="Password"
             />
-            {password.isTouched && password.value.length< 8 ? <PasswordErrorMessage />:null}
+            {user.password.isTouched && user.password.value.length< 8 ? <PasswordErrorMessage />:null}
           </div>
-          <div className="Field">
-            <label>
-              Role <sup>*</sup>
-            </label>
-            <select value={role} onChange={(e)=>{setRole(e.target.value)}}>
-              <option value="role">Role</option>
-              <option value="individual">Individual</option>
-              <option value="business">Business</option>
-            </select>
-          </div>
-          <button type="submit" className="profile-button" disabled={!getIsFormValid()}>
+          <div style={{ display: 'flex',justifyContent:'space-evenly'}}>
+          <Link to="/login">
+          <button type="submit" className="profile-button" disabled={!getIsFormValid()} >
             Create account
           </button>
+          </Link>
+          <Link to="/login">
+          <button type="submit" className="profile-button" disabled={getIsFormValid()}>
+            Login
+          </button>
+          </Link>
+          </div>
+          <div></div>
         </fieldset>
       </form>
     </div>

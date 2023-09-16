@@ -10,7 +10,7 @@ export default function AddTo({ cart1, handleRemoveFromCart, getTotalPrice }) {
         <h2 className="text-center overflow-hidden mb-5">Cart</h2>
         <div className="row">
         {cart1.map((product, index) => (
-          
+
           <div key={product.id}  className="col-2 ms-4">
             <div><img src={product.womenpic}className="img-fluid" style={{height:"250px", width:"300pxc"}}/></div>
             <div>{product.picdetail}</div>

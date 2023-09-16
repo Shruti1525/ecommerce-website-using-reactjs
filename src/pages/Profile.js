@@ -9,8 +9,6 @@ function Profile(){
         <div>
             <Navbar/>
             <ProfileHero/>
-          
-         
         </div>
     )
 }
